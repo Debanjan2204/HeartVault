@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    color: rgb(228, 228, 255);
+    background-color: #241b2f;
+}
+.btn{
+    border-radius: 17px;
+    transition: transform 0.2s;
+  }
+
+.btn:hover{
+    transform: scale(1.02);
+}
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: rgb(19, 0, 98);
+      background: linear-gradient(270deg, rgba(19, 0, 98, 1) 10%, rgba(35, 29, 66, 1) 50%, rgba(0, 18, 36, 1) 90%);
+}
+.logo{
+    height: 40px;
+    transition: transform 0.2s;
+}
+.logo:hover{
+    transform: scale(1.05);
+}
+.nav-link{
+    transition: transform 0.2s;
+}
+.nav-link:hover{
+    color: white;
+    transform: translateY(-4px);
+}
+
+     .profile-logo{
+        border-radius:100% !important;
+        height: 40px !important;
+      }
+      #profile-dropdown{
+        transition: transform 0.2s;
+      }
+      #profile-dropdown:hover{
+        transform: scale(1.08);
+      }
+
+
+.hero-section {
+    background: url('../assets/index_hero.jpg') no-repeat center center;
+    background-size: cover;
+    height: 600px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    
+}
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+.hero-section p {
+    font-size: 1.5rem;
+}
+.services-section {
+    padding: 80px 15px;
+}
+.card{
+    background-color: #262335;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: 1px solid #060031;
+}
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.accordion{
+    --bs-accordion-bg:#221a2d;
+}
+.accordion-button{
+    background-color: #28243d;
+}
+.accordion-button:not(.collapsed){
+    background-color: #262335;
+}
+
+
+footer {
+    background-color: #171520;
+    color: white;
+    /* padding: 15px 0; */
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 50px;
+}
