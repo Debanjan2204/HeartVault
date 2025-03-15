@@ -1,11 +1,17 @@
-# Use official Tomcat 9 image with JDK 17 
-FROM tomcat:9-jdk17 
- 
-# Copy the WAR file to Tomcat webapps directory 
-COPY sprint.war /usr/local/tomcat/webapps/ 
- 
-# Expose the Tomcat default port 
-EXPOSE 8080 
- 
-# Start Tomcat server 
-CMD ["catalina.sh", "run"] 
+# Use official Tomcat image
+FROM tomcat:9-jdk17
+
+# Copy the WAR file to the Tomcat webapps directory
+COPY sprint.war /usr/local/tomcat/webapps/sprint.war
+
+# Ensure correct permissions (optional, but useful)
+RUN chmod 644 /usr/local/tomcat/webapps/sprint.war
+
+# Set working directory to Tomcat
+WORKDIR /usr/local/tomcat
+
+# Expose the Tomcat default port
+EXPOSE 8080
+
+# Start Tomcat
+CMD ["catalina.sh", "run"]
