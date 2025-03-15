@@ -1,6 +1,5 @@
 /target/
 *.class
-*.war
 *.jar
 *.log
 /.idea/
