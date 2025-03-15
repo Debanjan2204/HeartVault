@@ -47,7 +47,7 @@ public class ConnectionUtil {
 //    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; // Make sure it's correct
 
     	Connection conn =null;
-        conn= DriverManager.getConnection(CUSTOMER_DB_URL);
+        conn= DriverManager.getConnection(DATABASE_URL);
         return conn;
     }
     
