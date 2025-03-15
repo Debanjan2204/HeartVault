@@ -21,6 +21,7 @@ public class ConnectionUtil {
     	String ADMIN_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway";
     	String username = "postgres";
     	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; 
+    	
         adminconn=DriverManager.getConnection(ADMIN_DB_URL,username,password);
         return adminconn;
     }
@@ -35,8 +36,9 @@ public class ConnectionUtil {
 		}
 //    	String CUSTOMER_DB_URL = "jdbc:sqlite:D:\\PROGRAMS X86 X64\\SQLITE\\Customer.db";
 //    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/{DATABASE_NAME}";
-    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway?user=postgres&password=mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr";
+//    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway?user=postgres&password=mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr";
 //    	String CUSTOMER_DB_URL="jdbc:postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway";
+    	String CUSTOMER_DB_URL="${{ Postgres.DATABASE_URL }}";
 
 //    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
 //    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
