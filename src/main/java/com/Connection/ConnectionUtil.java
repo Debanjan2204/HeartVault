@@ -35,13 +35,13 @@ public class ConnectionUtil {
 		}
 //    	String CUSTOMER_DB_URL = "jdbc:sqlite:D:\\PROGRAMS X86 X64\\SQLITE\\Customer.db";
 //    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/{DATABASE_NAME}";
-//    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway";
-    	String CUSTOMER_DB_URL="jdbc:postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway";
-//    	String username = "postgres";
-//    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; // Make sure it's correct
+    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway";
+//    	String CUSTOMER_DB_URL="jdbc:postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway";
+    	String username = "postgres";
+    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; // Make sure it's correct
 
-    	Connection conn = DriverManager.getConnection(CUSTOMER_DB_URL);
-        conn= DriverManager.getConnection(CUSTOMER_DB_URL);
+    	Connection conn =null;
+        conn= DriverManager.getConnection(CUSTOMER_DB_URL,username,password);
         return conn;
     }
     
