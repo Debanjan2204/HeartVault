@@ -1,5 +1,5 @@
 # Use official Tomcat image
-FROM tomcat:9-jdk17
+FROM tomcat:9-jdk21
 
 # Copy the WAR file to the Tomcat webapps directory
 COPY sprint.war /usr/local/tomcat/webapps/sprint.war
