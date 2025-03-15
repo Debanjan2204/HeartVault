@@ -1,0 +1,5 @@
+*.war
+target/
+logs/
+.DS_Store
+.git
