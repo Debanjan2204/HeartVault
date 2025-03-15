@@ -38,7 +38,7 @@ public class ConnectionUtil {
 //    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/{DATABASE_NAME}";
 //    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway?user=postgres&password=mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr";
 //    	String CUSTOMER_DB_URL="jdbc:postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway";
-    	String CUSTOMER_DB_URL="DATABASE_URL";
+    	String dbUrl = System.getenv("DATABASE_URL");
 
 //    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
 //    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
@@ -47,7 +47,7 @@ public class ConnectionUtil {
 //    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; // Make sure it's correct
 
     	Connection conn =null;
-        conn= DriverManager.getConnection(DATABASE_URL);
+        conn= DriverManager.getConnection(dbUrl);
         return conn;
     }
     
