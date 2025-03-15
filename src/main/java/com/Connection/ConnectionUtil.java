@@ -38,7 +38,10 @@ public class ConnectionUtil {
 //    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway?user=postgres&password=mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr";
     	String CUSTOMER_DB_URL="jdbc:postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway";
 
-    	String username = "postgres";
+    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
+    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
+    		
+    	String username ="postgres";
     	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; // Make sure it's correct
 
     	Connection conn =null;
