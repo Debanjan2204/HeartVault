@@ -1,5 +1,6 @@
 package com.Connection;
 
+import java.net.URI;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -38,7 +39,19 @@ public class ConnectionUtil {
 //    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/{DATABASE_NAME}";
 //    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway?user=postgres&password=mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr";
 //    	String CUSTOMER_DB_URL="jdbc:postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway";
+    	String jdbcUrl=null;
+    	String username="";
+    	String password="";
+    	try {
     	String dbUrl = System.getenv("DATABASE_URL");
+    	URI dbUri = new URI(dbUrl);
+        username = dbUri.getUserInfo().split(":")[0];
+        password = dbUri.getUserInfo().split(":")[1];
+        jdbcUrl = "jdbc:postgresql://" + dbUri.getHost() + ":" + dbUri.getPort() + dbUri.getPath();
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
 
 //    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
 //    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
@@ -47,7 +60,7 @@ public class ConnectionUtil {
 //    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; // Make sure it's correct
 
     	Connection conn =null;
-        conn= DriverManager.getConnection(dbUrl);
+        conn= DriverManager.getConnection(jdbcUrl,username,password);
         return conn;
     }
     
