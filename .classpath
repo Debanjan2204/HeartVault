@@ -13,9 +13,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="D:/Program Files/sqlite-jdbc-3.47.2.0.jar"/>
 	<classpathentry kind="lib" path="D:/argon2-jvm-2.1.jar"/>
 	<classpathentry kind="lib" path="D:/Program Files/jna-5.13.0.jar"/>
-	<classpathentry kind="lib" path="D:/Program Files/postgresql-42.7.5.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/postgresql-42.7.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
