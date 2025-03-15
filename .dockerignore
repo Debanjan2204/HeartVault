@@ -1,4 +1,4 @@
-*.war 
+#*.war 
 target/ 
 logs/ 
 .DS_Store 
