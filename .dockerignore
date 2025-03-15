@@ -1,5 +1,5 @@
-*.war
-target/
-logs/
-.DS_Store
-.git
+*.war 
+target/ 
+logs/ 
+.DS_Store 
+.git 
