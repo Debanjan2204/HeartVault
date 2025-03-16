@@ -102,11 +102,11 @@ else{
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="editName" class="form-label">First Name</label>
-                                <input type="text" id="editfName" class="form-control" value="<%=c.getfName() %>" name="fname" required>
+                                <input type="text" id="editfName" class="form-control" value="<%=c.getfName() %>" name="fname" maxlength="15" title="Only letters and spaces are allowed" oninput="this.value = this.value.replace(/[0-9]/g, ''); this.setCustomValidity(''); if (!this.checkValidity()) this.setCustomValidity('Please enter only letters');" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="editName" class="form-label">Last Name</label>
-                                <input type="text" id="editlName" class="form-control" value="<%=c.getlName() %>" name="lname" required>
+                                <input type="text" id="editlName" class="form-control" value="<%=c.getlName() %>" name="lname" maxlength="15" title="Only letters and spaces are allowed" oninput="this.value = this.value.replace(/[0-9]/g, ''); this.setCustomValidity(''); if (!this.checkValidity()) this.setCustomValidity('Please enter only letters');" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="editPhone" class="form-label">Phone Number</label>
@@ -141,10 +141,11 @@ else{
                                 <input type="text" id="editAddress" class="form-control" value="<%= c.getAddress()%>" name="address" required>
                             </div>
                         </div>
-                        <!--<div class="col-md-6">
+                        <div class="col-md-6">
                                 <label for="editPassword" class="form-label">Password</label>
-                                <input type="text" id="editPassword" class="form-control" value="" name="password" required>
-                            </div>-->
+                                <input type="text" value="Please click on Change Password for Password Change" readonly>
+                                <input type="hidden" id="editPassword" class="form-control" value="<%=c.getdob() %>" name="password" >
+                            </div>
                        
                         <div class="mt-4">
                             <button type="submit" class="btn btn-success">Save Changes</button>
