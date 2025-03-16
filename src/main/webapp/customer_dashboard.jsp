@@ -177,7 +177,7 @@ else{
                             </div>
                             <div class="col-md-6">
                                 <label for="beneficiaryAccount" class="form-label">Beneficiary Account Number</label>
-                                <input type="text" id="beneficiaryAccount" class="form-control" maxlength="15" oninput="this.value=this.value.replace(/[0-9]/g,'')" name="benefAcc" required>
+                                <input type="text" id="beneficiaryAccount" class="form-control" maxlength="15" oninput="this.value=this.value.replace(/[^0-9]/g,'')" name="benefAcc" required>
                             </div>
                         </div>
                         <div class="mt-4">
