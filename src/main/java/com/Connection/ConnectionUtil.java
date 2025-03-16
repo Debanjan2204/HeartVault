@@ -12,25 +12,25 @@ public class ConnectionUtil {
 
     public static Connection getAdminConnection() throws SQLException {
     	try {
-//			Class.forName("org.sqlite.JDBC");
-    		Class.forName("org.postgresql.Driver");
+			Class.forName("org.sqlite.JDBC");
+//    		Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 //		String ADMIN_DB_URL = "jdbc:sqlite:D:\\PROGRAMS X86 X64\\SQLITE\\Admin.db";
     	String ADMIN_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway";
-    	String username = "postgres";
-    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; 
+//    	String username = "postgres";
+//    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; 
     	
-        adminconn=DriverManager.getConnection(ADMIN_DB_URL,username,password);
+        adminconn=DriverManager.getConnection(ADMIN_DB_URL);
         return adminconn;
     }
 
     public static Connection CreatingConnectionCustDB() throws SQLException {
     	try {
-//			Class.forName("org.sqlite.JDBC");
-    		Class.forName("org.postgresql.Driver");
+			Class.forName("org.sqlite.JDBC");
+//    		Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
