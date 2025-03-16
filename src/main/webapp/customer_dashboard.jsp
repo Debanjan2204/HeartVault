@@ -143,7 +143,7 @@ else{
                         </div>
                         <div class="col-md-6">
                                 <label for="editPassword" class="form-label">Password</label>
-                                <input type="text" value="Please click on Change Password for Password Change" readonly>
+                                <input type="text" class="form-control" value="Please click on Change Password for Password Change" readonly>
                                 <input type="hidden" id="editPassword" class="form-control" value="<%=c.getdob() %>" name="password" >
                             </div>
                        
