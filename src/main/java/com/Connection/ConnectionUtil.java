@@ -1,6 +1,5 @@
 package com.Connection;
 
-import java.net.URI;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,7 +14,6 @@ public class ConnectionUtil {
 //			Class.forName("org.sqlite.JDBC");
     		Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 //		String ADMIN_DB_URL = "jdbc:sqlite:D:\\PROGRAMS X86 X64\\SQLITE\\Admin.db";
@@ -32,33 +30,12 @@ public class ConnectionUtil {
 //			Class.forName("org.sqlite.JDBC");
     		Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 //    	String CUSTOMER_DB_URL = "jdbc:sqlite:D:\\PROGRAMS X86 X64\\SQLITE\\Customer.db";
     	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway";
-//    	String CUSTOMER_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway?user=postgres&password=mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr";
-//    	String CUSTOMER_DB_URL="jdbc:postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway";
-    	String jdbcUrl=null;
     	String username="postgres";
     	String password="mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr";
-//    	try {
-//    	String dbUrl = System.getenv("DATABASE_URL");
-//    	URI dbUri = new URI(dbUrl);
-//        username = dbUri.getUserInfo().split(":")[0];
-//        password = dbUri.getUserInfo().split(":")[1];
-//        jdbcUrl = "jdbc:postgresql://" + dbUri.getHost() + ":" + dbUri.getPort() + dbUri.getPath();
-//    	}
-//    	catch(Exception e) {
-//    		e.printStackTrace();
-//    	}
-
-//    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
-//    	postgresql://postgres:mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr@gondola.proxy.rlwy.net:13235/railway
-    		
-//    	String username ="postgres";
-//    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; // Make sure it's correct
-
     	Connection conn =null;
         conn= DriverManager.getConnection(CUSTOMER_DB_URL,username,password);
         return conn;
