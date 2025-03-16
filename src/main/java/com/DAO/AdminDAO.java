@@ -104,7 +104,7 @@ public class AdminDAO {
 		
 		ResultSet set=stmt.executeQuery();
 		if(set.next()== true) {
-		long SSN_ID=set.getLong(1);
+		long SSN_ID=Long.parseLong(set.getString(1));
 		long Account_Number=set.getLong(2);
 		String First_Name=set.getString(3);
 		String Last_Name=set.getString(4); 
@@ -112,7 +112,7 @@ public class AdminDAO {
 		LocalDate DOB =set.getDate(6).toLocalDate();
 		long Contact =set.getLong(7);
 		String Address=set.getString(8);
-		String Aadhar=set.getString(9);
+		String Aadhar=String.valueOf(set.getLong(9));
 		String Pan =set.getString(10);
 		String Email_ID =set.getString(11);
 		String Password =set.getString(12);
@@ -143,7 +143,7 @@ public class AdminDAO {
 		stmt.setDate(4,Date.valueOf(c.getdob()));
 		stmt.setLong(5,c.getContactNo());
 		stmt.setString(6,c.getAddress());
-		stmt.setString(7,c.getAadharNo());
+		stmt.setLong(7,Long.parseLong(c.getAadharNo()));
 		stmt.setString(8,c.getPanNo());
 		stmt.setString(9,c.getEmail());
 		stmt.setString(10,c.getPassword());
@@ -166,7 +166,7 @@ public class AdminDAO {
 		PreparedStatement ps = conn.prepareStatement(query);
 
 		String hashedPassword = PasswordUtils.hashPassword(c.getPassword());
-		ps.setLong(1, c.getSsnNo());
+		ps.setString(1, String.valueOf(c.getSsnNo()));
 		ps.setLong(2, c.getAccountNo());
 		ps.setString(3, c.getfName());
 		ps.setString(4, c.getlName());
@@ -174,7 +174,7 @@ public class AdminDAO {
 		ps.setDate(6,Date.valueOf(c.getdob()));
 		ps.setLong(7, c.getContactNo());
 		ps.setString(8, c.getAddress());
-		ps.setString(9, c.getAadharNo());
+		ps.setLong(9, Long.parseLong(c.getAadharNo()));
 		ps.setString(10, c.getPanNo());
 		ps.setString(11, c.getEmail());
 		ps.setString(12,hashedPassword );
@@ -218,7 +218,7 @@ Connection conn=ConnectionUtil.CreatingConnectionCustDB();
 		ResultSet set=stmt.executeQuery();
 		List<Customer> l= new ArrayList<>();
 		while(set.next()== true) {
-			long SSN_ID=set.getLong(1);
+			long SSN_ID=Long.parseLong(set.getString(1));
 			long Account_Number=set.getLong(2);
 			String First_Name=set.getString(3);
 			String Last_Name=set.getString(4); 
@@ -226,7 +226,7 @@ Connection conn=ConnectionUtil.CreatingConnectionCustDB();
 			LocalDate DOB =set.getDate(6).toLocalDate();
 			long Contact =set.getLong(7);
 			String Address=set.getString(8);
-			String Aadhar=set.getString(9);
+			String Aadhar=String.valueOf(set.getLong(9));
 			String Pan =set.getString(10);
 			String Email_ID =set.getString(11);
 			String Password =set.getString(12);
@@ -252,7 +252,7 @@ Connection conn=ConnectionUtil.CreatingConnectionCustDB();
 		ResultSet set=stmt.executeQuery();
 		List<Transaction_table> l= new ArrayList<>();
 		while(set.next()== true) {
-			l.add(new Transaction_table(set.getString(1), set.getLong(2), set.getInt(3), LocalDate.parse(set.getString(4)), set.getLong(5)));
+			l.add(new Transaction_table(set.getString(1), set.getLong(2), set.getInt(3),set.getDate(4).toLocalDate(), set.getLong(5)));
 		}
 		conn.close();
 		return l;
