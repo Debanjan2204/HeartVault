@@ -102,11 +102,11 @@ else{
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="editName" class="form-label">First Name</label>
-                                <input type="text" id="editfName" class="form-control" value="<%=c.getfName() %>" name="fname" maxlength="15" title="Only letters and spaces are allowed" oninput="this.value = this.value.replace(/[0-9]/g, ''); this.setCustomValidity(''); if (!this.checkValidity()) this.setCustomValidity('Please enter only letters');" required>
+                                <input type="text" id="editfName" class="form-control" value="<%=c.getfName() %>" name="fname" maxlength="15" pattern="^[A-Za-z\s]+$" title="Only letters and spaces are allowed" oninput="this.value = this.value.replace(/[0-9]/g, ''); this.setCustomValidity(''); if (!this.checkValidity()) this.setCustomValidity('Please enter only letters');" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="editName" class="form-label">Last Name</label>
-                                <input type="text" id="editlName" class="form-control" value="<%=c.getlName() %>" name="lname" maxlength="15" title="Only letters and spaces are allowed" oninput="this.value = this.value.replace(/[0-9]/g, ''); this.setCustomValidity(''); if (!this.checkValidity()) this.setCustomValidity('Please enter only letters');" required>
+                                <input type="text" id="editlName" class="form-control" value="<%=c.getlName() %>" name="lname" maxlength="15" pattern="^[A-Za-z\s]+$" title="Only letters and spaces are allowed" oninput="this.value = this.value.replace(/[0-9]/g, ''); this.setCustomValidity(''); if (!this.checkValidity()) this.setCustomValidity('Please enter only letters');" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="editPhone" class="form-label">Phone Number</label>
@@ -173,11 +173,11 @@ else{
                             </div>
                             <div class="col-md-6">
                                 <label for="transferAmount" class="form-label">Amount to Transfer</label>
-                                <input type="number" id="transferAmount" class="form-control" name="amount" required>
+                                <input type="number" id="transferAmount" max="100000" class="form-control" name="amount"  required>
                             </div>
                             <div class="col-md-6">
                                 <label for="beneficiaryAccount" class="form-label">Beneficiary Account Number</label>
-                                <input type="text" id="beneficiaryAccount" class="form-control" name="benefAcc" required>
+                                <input type="text" id="beneficiaryAccount" class="form-control" maxlength="15" oninput="this.value=this.value.replace(/[0-9]/g,'')" name="benefAcc" required>
                             </div>
                         </div>
                         <div class="mt-4">
