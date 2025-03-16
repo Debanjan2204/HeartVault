@@ -20,10 +20,10 @@ public class ConnectionUtil {
 		}
 //		String ADMIN_DB_URL = "jdbc:sqlite:D:\\PROGRAMS X86 X64\\SQLITE\\Admin.db";
     	String ADMIN_DB_URL = "jdbc:postgresql://postgres.railway.internal:5432/railway";
-//    	String username = "postgres";
-//    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; 
+    	String username = "postgres";
+    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; 
     	
-        adminconn=DriverManager.getConnection(ADMIN_DB_URL);
+        adminconn=DriverManager.getConnection(ADMIN_DB_URL,username,password);
         return adminconn;
     }
 
