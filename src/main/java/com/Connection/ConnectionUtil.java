@@ -60,7 +60,7 @@ public class ConnectionUtil {
 //    	String password = "mxpLNbLdAqNjIVUfnvVSjGxACBkWfULr"; // Make sure it's correct
 
     	Connection conn =null;
-        conn= DriverManager.getConnection(jdbcUrl,username,password);
+        conn= DriverManager.getConnection(DATABASE_URL,username,password);
         return conn;
     }
     
