@@ -12,8 +12,8 @@ public class ConnectionUtil {
 
     public static Connection getAdminConnection() throws SQLException {
     	try {
-			Class.forName("org.sqlite.JDBC");
-//    		Class.forName("org.postgresql.Driver");
+//			Class.forName("org.sqlite.JDBC");
+    		Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,8 +29,8 @@ public class ConnectionUtil {
 
     public static Connection CreatingConnectionCustDB() throws SQLException {
     	try {
-			Class.forName("org.sqlite.JDBC");
-//    		Class.forName("org.postgresql.Driver");
+//			Class.forName("org.sqlite.JDBC");
+    		Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
