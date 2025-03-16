@@ -5,7 +5,7 @@ FROM tomcat:9-jdk21
 COPY ROOT.war /usr/local/tomcat/webapps/ROOT.war
 
 # Ensure correct permissions (optional, but useful)
-RUN chmod 644 /usr/local/tomcat/webapps/sprint.war
+RUN chmod 644 /usr/local/tomcat/webapps/ROOT.war
 
 # Set working directory to Tomcat
 WORKDIR /usr/local/tomcat
