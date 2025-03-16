@@ -143,7 +143,7 @@ else{
                         </div>
                         <!--<div class="col-md-6">
                                 <label for="editPassword" class="form-label">Password</label>
-                                <input type="text" id="editPassword" class="form-control" value="<% c.getPassword()%>" name="password" required>
+                                <input type="text" id="editPassword" class="form-control" value="" name="password" required>
                             </div>-->
                        
                         <div class="mt-4">
