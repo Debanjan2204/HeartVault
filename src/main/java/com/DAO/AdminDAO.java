@@ -39,7 +39,7 @@ public class AdminDAO {
         try {
             
             Connection con = ConnectionUtil.getAdminConnection();
-            String query = "select * from admin where empID = ?;";
+            String query = "select * from admin where id = ?;";
             
             PreparedStatement stmt = con.prepareStatement(query);
             
