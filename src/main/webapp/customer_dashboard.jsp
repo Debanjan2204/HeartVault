@@ -141,11 +141,6 @@ else{
                                 <input type="text" id="editAddress" class="form-control" value="<%= c.getAddress()%>" name="address" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                                <label for="editPassword" class="form-label">Password</label>
-                                <input type="text" class="form-control" value="Please click on Change Password for Password Change" readonly>
-                                <input type="hidden" id="editPassword" class="form-control" value="<%=c.getdob() %>" name="password" >
-                            </div>
                        
                         <div class="mt-4">
                             <button type="submit" class="btn btn-success">Save Changes</button>

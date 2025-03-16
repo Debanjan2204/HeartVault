@@ -134,7 +134,7 @@ public class AdminDAO {
 	public static String saveDetails(Customer c) throws IOException,SQLException{
 		Connection conn=ConnectionUtil.CreatingConnectionCustDB();
 		
-		String query="UPDATE basic_details SET First_Name=?,Last_Name=?,Gender=?,DOB=?,Contact=?,Address=?,Aadhar=?,Pan=?,Email_ID=?,Password=?,Account_Type=?  WHERE Account_Number =?";
+		String query="UPDATE basic_details SET first_name=?,last_name=?,gender=?,dob=?,contact=?,address=?,aadhar=?,pan=?,email_id=?,password=?,account_type=?  WHERE account_number =?";
 			
 		PreparedStatement stmt=conn.prepareStatement(query);
 		stmt.setString(1,c.getfName());

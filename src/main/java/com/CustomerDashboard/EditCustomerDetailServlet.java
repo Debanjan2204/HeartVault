@@ -37,8 +37,8 @@ public class EditCustomerDetailServlet extends HttpServlet{
 		c.setdob(LocalDate.parse(request.getParameter("dob")));
 		c.setAddress(request.getParameter("address"));
 		
-		String hashedPassword = PasswordUtils.hashPassword(request.getParameter("password"));
-		c.setPassword(hashedPassword);
+//		String hashedPassword = PasswordUtils.hashPassword(request.getParameter("password"));
+//		c.setPassword(hashedPassword);
 		
 		String rows=CustomerDAO.saveDetails(c);
 		if(rows!=null) {
