@@ -85,7 +85,7 @@ public class AdminDAO {
 		
 		else {
 			conn.close();
-			return null;
+			return "100000000000000";
 		}
 		conn.close();
 		return Long.toString(AccNum+1);
