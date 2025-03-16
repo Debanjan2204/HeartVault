@@ -2,6 +2,7 @@ package com.DAO;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -73,7 +74,7 @@ public static Customer searchByAccNumber(long Acc_Num) throws IOException,SQLExc
 	String First_Name=set.getString(3);
 	String Last_Name=set.getString(4); 
 	char Gender=set.getString(5).charAt(0);
-	LocalDate DOB =LocalDate.parse(set.getString(6));
+	LocalDate DOB =set.getDate(6).toLocalDate();
 	long Contact =set.getLong(7);
 	String Address=set.getString(8);
 	String Aadhar=set.getString(9);
@@ -104,7 +105,7 @@ public static String saveDetails(Customer c) throws IOException,SQLException{
 	PreparedStatement stmt=conn.prepareStatement(query);
 	stmt.setString(1,c.getfName());
 	stmt.setString(2,c.getlName());
-	stmt.setString(3,c.getdob().toString());
+	stmt.setDate(3,Date.valueOf(c.getdob()));
 	stmt.setLong(4,c.getContactNo());
 	stmt.setString(5,c.getAddress());
 	stmt.setString(6,c.getEmail());

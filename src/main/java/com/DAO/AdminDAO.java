@@ -2,6 +2,7 @@ package com.DAO;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -108,7 +109,7 @@ public class AdminDAO {
 		String First_Name=set.getString(3);
 		String Last_Name=set.getString(4); 
 		char Gender=set.getString(5).charAt(0);
-		LocalDate DOB =LocalDate.parse(set.getString(6));
+		LocalDate DOB =set.getDate(6).toLocalDate();
 		long Contact =set.getLong(7);
 		String Address=set.getString(8);
 		String Aadhar=set.getString(9);
@@ -139,7 +140,7 @@ public class AdminDAO {
 		stmt.setString(1,c.getfName());
 		stmt.setString(2,c.getlName());
 		stmt.setString(3,Character.toString(c.getGender()));
-		stmt.setString(4,c.getdob().toString());
+		stmt.setDate(4,Date.valueOf(c.getdob()));
 		stmt.setLong(5,c.getContactNo());
 		stmt.setString(6,c.getAddress());
 		stmt.setString(7,c.getAadharNo());
@@ -170,7 +171,7 @@ public class AdminDAO {
 		ps.setString(3, c.getfName());
 		ps.setString(4, c.getlName());
 		ps.setString(5, Character.toString(c.getGender()));
-		ps.setString(6, c.getdob().toString());
+		ps.setDate(6,Date.valueOf(c.getdob()));
 		ps.setLong(7, c.getContactNo());
 		ps.setString(8, c.getAddress());
 		ps.setString(9, c.getAadharNo());
@@ -222,7 +223,7 @@ Connection conn=ConnectionUtil.CreatingConnectionCustDB();
 			String First_Name=set.getString(3);
 			String Last_Name=set.getString(4); 
 			char Gender=set.getString(5).charAt(0);
-			LocalDate DOB =LocalDate.parse(set.getString(6));
+			LocalDate DOB =set.getDate(6).toLocalDate();
 			long Contact =set.getLong(7);
 			String Address=set.getString(8);
 			String Aadhar=set.getString(9);
